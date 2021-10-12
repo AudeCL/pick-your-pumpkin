@@ -1,54 +1,63 @@
 var gameBoard = document.querySelector('.game-board');
+var scorePoints = document.querySelector('.game-score');
+var startButton = document.querySelector('#start-btn');
+var mainAudio = new Audio ('/Images and Sounds/Covid Come Not Near - Nat Keefe & Hot Buttered Rum.mp3');
+var wrongClickAudio = new Audio ('/Images and Sounds/VOXLaff_Rire strident (ID 0489)_LS.mp3'); 
 let pumpkinFrequency = randomTime(800, 1500);
 let halloweenPumpkinFrequency = randomTime(800, 1500);
+let score = 0;
+
+
 
 //Create function to make a random time for Pumpkins to pop from the ground 
 function randomTime(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 };
 
-//Create a function to create and push DIV elements (Pumpkins) - and to remove it after X second
-var pumpkin = setInterval(function pumpkinAppear() {
-    var $div = document.createElement("div");
-    document.body.appendChild($div); // push in gameboard only not in body
-    
-    $div.classList.add("pumpkinSpot");
-    $div.style.left = `${randomTime(0, window.innerWidth)}px`; //can innerWidth and innerHeight be limited to gameboard dimensions?
-    $div.style.top = `${randomTime(0, window.innerHeight)}px`;
+//Create a function to initiate game when clicking "Go Pick Pumpkins"
+startButton.addEventListener("click", function () {
+    mainAudio.play();
+    //Create a function to create and push DIV elements (Pumpkins) - and to remove it after X second
+    var pumpkin = setInterval(function pumpkinAppear() {
+        var $div = document.createElement("div");
+        document.body.appendChild($div);
+        
+        $div.classList.add("pumpkinSpot");
+        $div.style.left = `${randomTime(gameBoard.getBoundingClientRect().left, gameBoard.getBoundingClientRect().width)}px`;
+        $div.style.top = `${randomTime(gameBoard.getBoundingClientRect().top, gameBoard.getBoundingClientRect().height)}px`;
 
-    setTimeout(function(){
-        $div.remove();
-      }, randomTime(1000, 2000));
+        setTimeout(function(){
+            $div.remove();
+        }, randomTime(1000, 2000));
 
-    $div.addEventListener("click", function () {
-        $div.remove();
-    });
+        $div.addEventListener("click", function () {
+            $div.remove();
+            score += 10;
+            scorePoints.innerHTML = score
+        });
+    }, pumpkinFrequency);
 
-}, pumpkinFrequency);
+    //Create a function to create and push DIVH elements (Halloween Pumpkins) 
+    var halloweenPumpkin = setInterval(function halloweenPumpkinAppear() {
+        var $divH = document.createElement("div");
+        document.body.appendChild($divH);
+        
+        $divH.classList.add("halloweenPumpkinSpot");
+        $divH.style.left = `${randomTime(gameBoard.getBoundingClientRect().left, gameBoard.getBoundingClientRect().width)}px`;
+        $divH.style.top = `${randomTime(gameBoard.getBoundingClientRect().top, gameBoard.getBoundingClientRect().height)}px`;
 
-//Create a function to create and push DIVH elements (Halloween Pumpkins) 
-var halloweenPumpkin = setInterval(function halloweenPumpkinAppear() {
-    var $divH = document.createElement("div");
-    document.body.appendChild($divH); // push in gameboard only not in body
-    
-    $divH.classList.add("halloweenPumpkinSpot");
-    $divH.style.left = `${randomTime(0, window.innerWidth)}px`; //can innerWidth and innerHeight be limited to gameboard dimensions?
-    $divH.style.top = `${randomTime(0, window.innerHeight)}px`;
-
-    setTimeout(function(){
-        $divH.remove();
-      }, randomTime(1000, 2000));
+        setTimeout(function(){
+            $divH.remove();
+        }, randomTime(1000, 2000)
+        );
 
         $divH.addEventListener("click", function () {
-        clearInterval(halloweenPumpkin);
-        clearInterval(pumpkin);
-        document.getElementById("myPopup").classList.toggle("show");
-    });
+            mainAudio.pause();
+            wrongClickAudio.play();
+            clearInterval(halloweenPumpkin);
+            clearInterval(pumpkin);
+            document.getElementById("myPopup").classList.toggle("show");
+        });
 
-}, halloweenPumpkinFrequency);
-
-//Create a function to start a new game
-const startButton = document.querySelector(".start-btn");
-startButton.addEventListener("click", function () {
-    console.log ("Test Start Button");
+    }, halloweenPumpkinFrequency);
 });
