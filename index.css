@@ -4,13 +4,14 @@ html, body {
     font-family: 'Libre Baskerville', serif;
     height: 100%;
     width: 100%;
+    color: #DFE2E1;
 }
+
                                                              
 .game-leftpanel {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-bottom: 30%;
     width: 30%;
     background: url("https://images.unsplash.com/photo-1602718597275-ae1ab8070b7d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHB1bXBraW4lMjBwYXRjaHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60") no-repeat;
     background-size: cover;
@@ -19,26 +20,51 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-}
-
-.game-scoreboard {
-    text-align: center;
-    background: white;
-    width: 80%;
-    height: 20%;
+    margin-top: 80px;
 }
 
 #start-btn {
-    background: red;
+    background: coral;
+    color: #DFE2E1;
     cursor: pointer;
+    font-weight: 100;
+	padding: 20px;
+	text-transform: uppercase;
+	border-radius: 6px;
+	display: inline-block;
+	transition: all 0.3s ease 0s;
+    margin-top: 155px;
 }
 
-img {
+#start-btn:hover {
+	background: #DFE2E1 !important;
+    color: #404040;
+	font-weight: 700;
+	letter-spacing: 3px;
+	background: none;
+	transition: all 0.3s ease 0s;
+}
+
+.game-scoreboard {
     position: absolute;
-    bottom: -45px;
-    width: 30%;
+    text-align: center;
+    border-radius: 25px;
+    background: #DFE2E1;
+    width: 296px;
+    height: 189px;
+    bottom: 84px;
+    color: coral;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#farm-sign {
+    position: absolute;
+    width: 345px;
     height: auto;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .game-board {
@@ -50,20 +76,47 @@ img {
 
 }
 
-.pumpkinSpot {
+.pumpkinSpotA {
     width: 50px;
     height: 50px;
     position: absolute;
     background: orangered;
 }
 
-.halloweenPumpkinSpot {
+.pumpkinSpotB {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: orange;
+}
+
+.pumpkinSpotC {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: olivedrab;
+}
+
+.halloweenPumpkinSpotA {
     width: 50px;
     height: 50px;
     position: absolute;
     background: black;
 }
 
+.halloweenPumpkinSpotB {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: burlywood;
+}
+
+.halloweenPumpkinSpotC {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: brown;
+}
 /* Popup container */
 .popupGameOver {
     visibility: hidden;

@@ -1,3 +1,5 @@
+var pumpkinSpot = [`pumpkinSpotA`, `pumpkinSpotB`, `pumpkinSpotC`];
+var halloweenPumpkinSpot = [`halloweenPumpkinSpotA`, `halloweenPumpkinSpotB`, `halloweenPumpkinSpotC`];
 var gameBoard = document.querySelector('.game-board');
 var scorePoints = document.querySelector('.game-score');
 var startButton = document.querySelector('#start-btn');
@@ -16,13 +18,16 @@ function randomTime(min, max) {
 
 //Create a function to initiate game when clicking "Go Pick Pumpkins"
 startButton.addEventListener("click", function () {
-    mainAudio.play();
+    document.getElementById("myPopup").classList.toggle("hide");
+    document.querySelector(".game-scoreboard").style.removeProperty('visibility')
+
+    //mainAudio.play();
     //Create a function to create and push DIV elements (Pumpkins) - and to remove it after X second
     var pumpkin = setInterval(function pumpkinAppear() {
         var $div = document.createElement("div");
         document.body.appendChild($div);
         
-        $div.classList.add("pumpkinSpot");
+        $div.classList.add(pumpkinSpot[Math.floor(Math.random() * pumpkinSpot.length)]);
         $div.style.left = `${randomTime(gameBoard.getBoundingClientRect().left, gameBoard.getBoundingClientRect().width)}px`;
         $div.style.top = `${randomTime(gameBoard.getBoundingClientRect().top, gameBoard.getBoundingClientRect().height)}px`;
 
@@ -42,7 +47,7 @@ startButton.addEventListener("click", function () {
         var $divH = document.createElement("div");
         document.body.appendChild($divH);
         
-        $divH.classList.add("halloweenPumpkinSpot");
+        $divH.classList.add(halloweenPumpkinSpot[Math.floor(Math.random() * halloweenPumpkinSpot.length)]);
         $divH.style.left = `${randomTime(gameBoard.getBoundingClientRect().left, gameBoard.getBoundingClientRect().width)}px`;
         $divH.style.top = `${randomTime(gameBoard.getBoundingClientRect().top, gameBoard.getBoundingClientRect().height)}px`;
 
