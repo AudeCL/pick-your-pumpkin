@@ -114,14 +114,14 @@ html, body {
 
 .halloweenPumpkinSpotB {
     width: 90px;
-    height: auto;
+    height: 90px;
     position: absolute;
     background: url('./ImagesSounds/halloweenPumpkinB.png');
     background-size: contain;
 }
 
 .halloweenPumpkinSpotC {
-    width: auto;
+    width: 90px;
     height: 90px;
     position: absolute;
     background: url('./ImagesSounds/halloweenPumpkinC.png');

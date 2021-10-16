@@ -21,7 +21,7 @@ startButton.addEventListener("click", function () {
     document.getElementById("myPopup").classList.toggle("hide");
     document.querySelector(".game-scoreboard").style.removeProperty('visibility')
 
-    //mainAudio.play();
+    mainAudio.play();
 
     //Create a function to create and push DIV elements (Pumpkins) - and to remove it after X second
     var pumpkin = setInterval(function pumpkinAppear() {
