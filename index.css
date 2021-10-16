@@ -84,7 +84,7 @@ html, body {
     width: 90px;
     height: 90px;
     position: absolute;
-    background: url('./ImagesSounds/pumkinA.png') no-repeat;
+    background: url('ImagesSounds/pumkinA.png') no-repeat;
     background-size: contain;
 }
 
@@ -92,7 +92,7 @@ html, body {
     width: 90px;
     height: 90px;
     position: absolute;
-    background: url('./ImagesSounds/pumpkinB.png') no-repeat;
+    background: url('ImagesSounds/pumpkinB.png') no-repeat;
     background-size: contain;
 }
 
@@ -100,7 +100,7 @@ html, body {
     width: 90px;
     height: 90px;
     position: absolute;
-    background: url('./ImagesSounds/pumpkinC.png') no-repeat;
+    background: url('ImagesSounds/pumpkinC.png') no-repeat;
     background-size: contain;
 }
 
@@ -108,7 +108,7 @@ html, body {
     width: 90px;
     height: 90px;
     position: absolute;
-    background: url('./ImagesSounds/halloweenPumpkinA.png');
+    background: url('ImagesSounds/halloweenPumpkinA.png');
     background-size: contain;
 }
 
@@ -116,7 +116,7 @@ html, body {
     width: 90px;
     height: 90px;
     position: absolute;
-    background: url('./ImagesSounds/halloweenPumpkinB.png');
+    background: url('ImagesSounds/halloweenPumpkinB.png');
     background-size: contain;
 }
 
@@ -124,7 +124,7 @@ html, body {
     width: 90px;
     height: 90px;
     position: absolute;
-    background: url('./ImagesSounds/halloweenPumpkinC.png');
+    background: url('ImagesSounds/halloweenPumpkinC.png');
     background-size: contain;;
 }
 /* Popup container */
