@@ -3,8 +3,8 @@ var halloweenPumpkinSpot = [`halloweenPumpkinSpotA`, `halloweenPumpkinSpotB`, `h
 var gameBoard = document.querySelector('.game-board');
 var scorePoints = document.querySelector('.game-score');
 var startButton = document.querySelector('#start-btn');
-var mainAudio = new Audio ('/Images and Sounds/Covid Come Not Near - Nat Keefe & Hot Buttered Rum.mp3');
-var wrongClickAudio = new Audio ('/Images and Sounds/VOXLaff_Rire strident (ID 0489)_LS.mp3'); 
+var mainAudio = new Audio ('/ImagesSounds/Covid Come Not Near - Nat Keefe & Hot Buttered Rum.mp3');
+var wrongClickAudio = new Audio ('/ImagesSounds/VOXLaff_Rire strident (ID 0489)_LS.mp3'); 
 let pumpkinFrequency = randomTime(800, 1500);
 let halloweenPumpkinFrequency = randomTime(800, 1500);
 let score = 0;
@@ -22,6 +22,7 @@ startButton.addEventListener("click", function () {
     document.querySelector(".game-scoreboard").style.removeProperty('visibility')
 
     //mainAudio.play();
+
     //Create a function to create and push DIV elements (Pumpkins) - and to remove it after X second
     var pumpkin = setInterval(function pumpkinAppear() {
         var $div = document.createElement("div");

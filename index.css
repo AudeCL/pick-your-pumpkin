@@ -5,6 +5,7 @@ html, body {
     height: 100%;
     width: 100%;
     color: #DFE2E1;
+    overflow: hidden;
 }
 
                                                              
@@ -12,6 +13,7 @@ html, body {
     position: relative;
     display: flex;
     flex-direction: column;
+    padding: 0 20px;
     width: 30%;
     background: url("https://images.unsplash.com/photo-1602718597275-ae1ab8070b7d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHB1bXBraW4lMjBwYXRjaHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60") no-repeat;
     background-size: cover;
@@ -20,7 +22,8 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 60px;
+    text-align: center;
 }
 
 #start-btn {
@@ -33,7 +36,7 @@ html, body {
 	border-radius: 6px;
 	display: inline-block;
 	transition: all 0.3s ease 0s;
-    margin-top: 155px;
+    margin-top: 15px;
 }
 
 #start-btn:hover {
@@ -60,6 +63,7 @@ html, body {
 
 #farm-sign {
     position: absolute;
+    pointer-events: none;
     width: 345px;
     height: auto;
     bottom: -35px;
@@ -71,51 +75,57 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(181,148,117);
+    background: #ABA34D;
     width: 70%;
 
 }
 
 .pumpkinSpotA {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     position: absolute;
-    background: orangered;
+    background: url('./ImagesSounds/pumkinA.png') no-repeat;
+    background-size: contain;
 }
 
 .pumpkinSpotB {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     position: absolute;
-    background: orange;
+    background: url('./ImagesSounds/pumpkinB.png') no-repeat;
+    background-size: contain;
 }
 
 .pumpkinSpotC {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     position: absolute;
-    background: olivedrab;
+    background: url('./ImagesSounds/pumpkinC.png') no-repeat;
+    background-size: contain;
 }
 
 .halloweenPumpkinSpotA {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     position: absolute;
-    background: black;
+    background: url('./ImagesSounds/halloweenPumpkinA.png');
+    background-size: contain;
 }
 
 .halloweenPumpkinSpotB {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: auto;
     position: absolute;
-    background: burlywood;
+    background: url('./ImagesSounds/halloweenPumpkinB.png');
+    background-size: contain;
 }
 
 .halloweenPumpkinSpotC {
-    width: 50px;
-    height: 50px;
+    width: auto;
+    height: 90px;
     position: absolute;
-    background: brown;
+    background: url('./ImagesSounds/halloweenPumpkinC.png');
+    background-size: contain;;
 }
 /* Popup container */
 .popupGameOver {
